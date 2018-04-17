@@ -1121,6 +1121,10 @@ with pkgs;
 
   hid-listen = callPackage ../tools/misc/hid-listen { };
 
+  hint = haskell.lib.overrideCabal haskellPackages.hint (drv: {
+    doCheck = stdenv.is64bit;  # https://github.com/NixOS/cabal2nix/issues/272
+  });
+
   hostsblock = callPackage ../tools/misc/hostsblock { };
 
   hr = callPackage ../applications/misc/hr { };
