@@ -958,4 +958,5 @@ self: super: {
     hpack = self.hpack_0_27_0;
   });
 
+  hint = dontCheck super.hint;
 }
