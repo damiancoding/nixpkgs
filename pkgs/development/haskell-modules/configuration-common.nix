@@ -959,4 +959,5 @@ self: super: {
   });
 
   hint = dontCheck super.hint;
+  freer = dontCheck super.freer;
 }
