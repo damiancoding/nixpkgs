@@ -1125,6 +1125,10 @@ with pkgs;
     doCheck = stdenv.is64bit;  # https://github.com/NixOS/cabal2nix/issues/272
   });
 
+  freer = haskell.lib.overrideCabal haskellPackages.freer (drv: {
+    doCheck = stdenv.is64bit;  # https://github.com/NixOS/cabal2nix/issues/272
+  });
+
   hostsblock = callPackage ../tools/misc/hostsblock { };
 
   hr = callPackage ../applications/misc/hr { };
